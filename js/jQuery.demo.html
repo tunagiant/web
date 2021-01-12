@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <ul id="list">
+        <li>empty</li>
+        <li>empty</li>
+        <li>empty</li>
+        <li>empty</li>
+    </ul>
+    <input type="button" value="execute" id="execute_btn">
+    <script>
+        // 아이디가 execute_btn을 눌렀을때 함수실행
+        $('#execute_btn').click(function(){
+        // jQuery의 명령어는 $로 시작하는것이 많음. 아이디가 list인 것의 li태그의 텍스트를 ()내용으로 바꿈
+        $('#list li').text('coding everybody');
+        })
+    </script>
+    
+</body>
+</html>
