@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 전역변수
+        var vscope = 'global';
+        function fscope() {
+            // 지역변수     var을 함수 안에서 사용하면 지역변수가됨
+            //              var을 for문, if문 등에서 사용시에는 전역변수임
+            var vscope = 'local';
+            var lv = 'local variables';
+            alert(vscope);
+            alert(lv);
+        }
+        fscope();
+        // alert(lv);   // 오류
+        function fscope2() {
+            alert(vscope);
+        }
+        fscope2();
+        function fscope3() {
+            vscope = 'glo'; // var 없을 시 전역변수로 선언됨
+            alert(vscope);
+        }
+        fscope3();
+    </script>
+    
+</body>
+</html>

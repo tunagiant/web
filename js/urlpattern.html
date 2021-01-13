@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <script>
+        
         var urlPattern = /\b(?:http?):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*/gim;
         var content = '생활코딩 : http://opentutorials.org/course/1 입니다. 네이버 : http://naver.com 입니다. ';
         var result = content.replace(urlPattern, function(url){
@@ -17,3 +17,7 @@
     
 </body>
 </html>
+/*
+정규식에 사용되는 메서드
+exec    test    match   search  replace split
+*/

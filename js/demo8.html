@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function factory_movie(title) {
+            return {
+                get_title : function() {
+                    return title;
+                },
+                set_title : function(_title) {
+                    title = _title
+                }
+            }
+        }
+            ghost = factory_movie('Ghost in the shell');
+            matrix = factory_movie('Matrix');
+
+            document.write(ghost.get_title() + '<br>');
+            document.write(matrix.get_title() + '<br>');
+            ghost.set_title('hi');
+            document.write(ghost.get_title());
+        
+    </script>
+</body>
+</html>

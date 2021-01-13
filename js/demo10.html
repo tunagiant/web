@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function zero() {
+            console.log(
+                'zero.length', zero.length,
+                'arguments', arguments.length
+            );
+        }
+        zero();
+
+        function one(arg1) {
+            console.log(
+                'one.length', one.length,
+                'arguments', arguments.length
+            );
+        }
+        one('val1', 'val2');
+        
+        function two(arg1, arg2) {
+            console.log(
+                'two.length', two.length,
+                'arguments', arguments.length
+            );
+        }
+        two('val1', 'val2', 'val3', 'val4');
+
+    </script>
+    
+</body>
+</html>
