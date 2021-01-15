@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+                var arr = new Array('seoul', 'new york', 'lanarkh', 'pusan', 'Tsukuba');
+
+                function getRandomValueFromArray(arr) {
+                    var index = Math.floor(arr.length * Math.random());
+                    return arr[index];
+                }
+                console.log(getRandomValueFromArray(arr));
+                */
+
+        var arr = new Array('seoul', 'new york', 'lanarkh', 'pusan', 'Tsukuba');
+        Array.prototype.random = function() {
+            var index = Math.floor(this.length * Math.random());
+            return this[index];
+        }
+        console.log(arr.random());
+    </script>
+
+</body>
+
+</html>

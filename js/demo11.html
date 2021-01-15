@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         function sum() {
             var _sum = 0;
             // var this = o1; 이 암시적으로 들어갔다고 보면 됨
-            for(name in this) {
+            for (name in this) {
                 _sum += this[name];
             }
             return _sum;
         }
-        o1 = { val1 : 1, val2 : 2, val3 : 3 }
-        o2 = { v1 : 10, v2 : 50, v3 : 100, v4 : 25 }
+        o1 = {
+            val1: 1,
+            val2: 2,
+            val3: 3
+        }
+        o2 = {
+            v1: 10,
+            v2: 50,
+            v3: 100,
+            v4: 25
+        }
         alert(sum.apply(o1));
         alert(sum(o2));
-
-
     </script>
-    
+
 </body>
+
 </html>

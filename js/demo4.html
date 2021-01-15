@@ -5,19 +5,19 @@
 <body>
     <script>
         var grades = {
-            // 객체에 객체넣기
-            'list': {
-                'a': 10,
-                'b': 20,
-                'c': 30
-            },
-            // 객체에 함수넣기
-            'show': function() {
-                alert('Hello world');
-            }
+                // 객체에 객체넣기
+                'list': {
+                    'a': 10,
+                    'b': 20,
+                    'c': 30
+                },
+                // 객체에 함수넣기
+                'show': function() {
+                    alert('Hello world');
+                }
 
-        }
-        // alert(grades.list.a);
+            }
+            // alert(grades.list.a);
         alert(grades['list'].a);
         grades['show']();
     </script>
