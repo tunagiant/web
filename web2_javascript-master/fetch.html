@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <article>
+
+    </article>
+    // fetch API
+    <input type="button" value="fetch" onclick="
+    // fetch :웹브라우저가 css파일을 server에 응답해달라고 요청 // then :응답이 끝나면 function실행(Asynchronous)
+        fetch('css').then(function(response){   // 익명함수
+         response.text().then(function(text){
+            alert(text);
+            document.querySelector('article').innerHTML=text;
+        })
+        })
+
+ /* //기본적사용법     
+    function callbackme() {
+            console.log('response end');
+        }
+        fetch('html').then(callabckme);
+        console.log(1);
+        console.log(2); */
+
+        ">
+
+
+</body>
+
+</html>
