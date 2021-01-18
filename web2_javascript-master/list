@@ -1,0 +1,7 @@
+
+        <li><a href="#!html" onclick="fetchPage('html')     // 해쉬 관습적으로 !을 붙임
+            ">HTML</a></li>
+        <li><a href="#!css" onclick="fetchPage('css')
+        ">CSS</a></li>
+        <li><a href="#!js" onclick="fetchPage('js')
+        ">JavaScript</a></li>

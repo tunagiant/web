@@ -27,16 +27,21 @@
                })
                });
         }
-        if(location.hash) {
-            fetchPage(location.hash.substr(2));
-        } else {
-            fetchPage('welcome');
-        }
 
-            fetch('list').then(function(response){
+            fetch('list2').then(function(response){
                 response.text().then(function(text){
         console.log(text);
-                   document.querySelector('#nav').innerHTML=text;   // id가 nav
+        var items = text.split(',');
+        var i = 0;
+        var tags = '';
+        while(i < items.length) {
+            var item = items[i].trim();
+        // <li><a href="#!css" onclick="fetchPage('css')">CSS</a></li>
+            var tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">'+item+'</a></li>';
+            tags += tag;
+            i++;
+        }
+                   document.querySelector('#nav').innerHTML=tags;   // id가 nav
                })
                });
 
