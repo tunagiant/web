@@ -1,14 +1,14 @@
-let http = require('http');   // require(id)  id || ./path || allpath   모듈을 불러옴
+let http = require('http'); // require(id)  id || ./path || allpath   모듈을 불러옴
 let fs = require('fs');
 let url = require('url');
 
 // request : client->server   response : server->client
-let app = http.createServer(function (request, response) {
+let app = http.createServer(function(request, response) {
     let _url = request.url;
     // parse : url문자열을 url객체로 가져옴     format, resolve : 반대기능
     // true : 문자열->객체  false : 객체->문자열    query : ?뒷부분
     let queryData = url.parse(_url, true).query;
-    let pathname = url.parse(_url, true).pathname;  // pathname : path에서 querydata 제외한부분
+    let pathname = url.parse(_url, true).pathname; // pathname : path에서 querydata 제외한부분
     let title = queryData.id;
     /* let list = `<Ol>
     <li><a href="/?id=HTML">기술소개</a></li>
@@ -18,12 +18,12 @@ let app = http.createServer(function (request, response) {
     ` */
 
     if (pathname === '/') {
-        fs.readdir('./data', function (err, filelist) {   // 파일목록을 가져오고 그 작업이 끝나면 function을 호출
+        fs.readdir('./data', function(err, filelist) { // 파일목록을 가져오고 그 작업이 끝나면 function을 호출
 
-            fs.readFile(`data/${queryData.id}`, 'utf-8', function (err, data) {
+            fs.readFile(`data/${queryData.id}`, 'utf-8', function(err, data) {
 
                 title = queryData.id;
-                if (queryData.id === undefined) {    // queryData가 없음 -> root값
+                if (queryData.id === undefined) { // queryData가 없음 -> root값
                     title = 'Welcome';
                     data = "Hello, Node.js";
                 }
@@ -65,4 +65,3 @@ ${list}
 
 });
 app.listen(3000);
-// repeat
