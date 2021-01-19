@@ -8,7 +8,7 @@ let app = http.createServer(function(request, response) {
     // parse : url문자열을 url객체로 가져옴     format, resolve : 반대기능
     // true : 문자열->객체  false : 객체->문자열    query : ?뒷부분
     let queryData = url.parse(_url, true).query;
-    let pathname = url.parse(_url, true).pathname; // pathname : path에서 querydata 제외한부분
+    let pathname = url.parse(_url, true).pathname; // pathname : path에서 querydata(?부터시작하는것) 제외한부분
     let title = queryData.id;
     /* let list = `<Ol>
     <li><a href="/?id=HTML">기술소개</a></li>
@@ -16,11 +16,13 @@ let app = http.createServer(function(request, response) {
     <li><a href="/?id=JS">하이퍼텍스트와 속성</a></li>
     </Ol>
     ` */
+    // console.log(pathname);
+    // console.log(path);
 
     if (pathname === '/') {
         fs.readdir('./data', function(err, filelist) { // 파일목록을 가져오고 그 작업이 끝나면 function을 호출
 
-            fs.readFile(`data/${queryData.id}`, 'utf-8', function(err, data) {
+            fs.readFile(`./data/${queryData.id}`, 'utf-8', function(err, data) {
 
                 title = queryData.id;
                 if (queryData.id === undefined) { // queryData가 없음 -> root값
@@ -45,7 +47,7 @@ let app = http.createServer(function(request, response) {
 <body>
 <h1><a href="/">WEB1</a></h1>
 ${list}
-
+<a href="/create">create</a>
 <h2>${title}</h2>
 <p>${data}</p>
 </body>
@@ -57,6 +59,8 @@ ${list}
             });
         })
 
+    } else if (pathname === '/create') {
+
     } else {
         response.writeHead(404);
         response.end('Not found');
@@ -64,4 +68,4 @@ ${list}
 
 
 });
-app.listen(3000);
+app.listen(4000);
