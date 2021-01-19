@@ -9,38 +9,16 @@
 </head>
 
 <body>
-    <h1><a href="#!welcome">WEB</a></h1>
+    <h1><a href="index.html">WEB</a></h1>
     <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this);
   ">
-    <ol id="nav">
+    <ol>
+        <li><a onclick="document.querySelector('article').innerHTML = '<h2>HTML</h2>HTML is...';">HTML</a></li>
+        <li><a onclick="document.querySelector('article').innerHTML = '<h2>HTML</h2>CSS is...';">CSS</a></li>
+        <li><a onclick="document.querySelector('article').innerHTML = '<h2>HTML</h2>JS is...';">JavaScript</a></li>
     </ol>
-    <article>
-
-    </article>
-    <script>
-        function fetchPage(name) {
-            fetch(name).then(function(response){
-                response.text().then(function(text){
-                   alert(text);
-                   document.querySelector('article').innerHTML=text;    // 태그가 article
-               })
-               });
-        }
-        if(location.hash) {
-            fetchPage(location.hash.substr(2));
-        } else {
-            fetchPage('welcome');
-        }
-
-            fetch('list').then(function(response){
-                response.text().then(function(text){
-        console.log(text);
-                   document.querySelector('#nav').innerHTML=text;   // id가 nav
-               })
-               });
-
-    </script>
+    <article></article>
 </body>
 
 </html>
